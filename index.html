@@ -1,0 +1,218 @@
+<html>
+<head>
+<script>
+
+function captcha()
+{
+//alert("This is captcha!!");
+var alpha=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0','@'];
+var a=alpha[Math.floor(Math.random()*63)];
+var b=alpha[Math.floor(Math.random()*63)];
+var c=alpha[Math.floor(Math.random()*63)];
+var d=alpha[Math.floor(Math.random()*63)];
+var e=alpha[Math.floor(Math.random()*63)];
+var f=alpha[Math.floor(Math.random()*63)];
+var g=alpha[Math.floor(Math.random()*63)];
+
+sam=a+b+c+d+e+f+g;
+document.getElementById("capt").value=sam;
+}
+function match()
+{
+var mat=document.getElementById("catch").value;
+if(mat!==sam)
+{
+alert("Invalid Captcha!");
+document.getElementById("catch").value="";
+captcha();
+}
+else
+{
+alert("Hello KAMLESH!");
+//window.location.href="index.html";
+}
+
+}
+
+</script>
+
+<style>
+
+body
+{
+//background-image:linear-gradient(black,maroon,red,lightred,orangered);
+background-image:url('663.jpg');
+background-attachment:fixed;
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+#outer
+{
+height:auto;
+width:500px;
+margin:50 auto;
+border:1px solid none;
+background: rgba(00, 00, 00, 0.5);
+box-shadow:5px 5px 5px black;
+padding:5px;
+ 
+}
+
+.image
+{
+height:250px;
+width:250px;
+border:1px solid none;
+background-image:url('0222.png');
+background-position:fixed;
+margin:20px auto; 
+border-radius:200px;
+}
+.container
+{
+height:350px;
+width:400px;
+border:1px solid none;
+//background:yellow;
+background-position:fixed;
+margin:20px auto;
+}
+
+#name
+{
+color:white;
+font-weight:bolder;
+text-align:center;
+height:60px;
+width:400px;
+font-size:25px;
+border-radius:30px;
+outline:none;
+font-family:consolas;
+background: rgba(00, 00, 00, 0.2);
+}
+#name:hover
+{
+background-color:lightgreen;
+color:blue;
+}
+#email
+{
+color:white;
+font-weight:bolder;
+text-align:center;
+height:60px;
+width:400px;
+font-size:25px;
+margin-top:5px;
+border-radius:30px;
+outline:none;
+font-family:consolas;
+background: rgba(00, 00, 00, 0.2);
+}
+#email:hover
+{
+background-color:lightgreen;
+color:blue;
+}
+#capt
+{
+color:red;
+font-weight:bolder;
+text-align:center;
+height:60px;
+width:250px;
+font-size:25px;
+margin-top:5px;
+background: rgba(00, 00, 00, 0.2);
+border-radius:30px 0px 0px 30px;
+outline:none;
+font-family:consolas;
+}
+#capt:hover
+{
+background-color:lightgreen;
+}
+#reload
+{
+height:60px;
+width:150px; 
+cursor:pointer;
+font-size:25px;
+margin-left:-4px;
+margin-top:5px;
+border-radius:0px 30px 30px 0px;
+outline:none;
+font-family:consolas;
+font-weight:bolder;
+
+}
+#reload:hover
+{
+background-color:lightgreen;
+}
+#catch
+{
+color:white;
+font-weight:bolder;
+text-align:center;
+height:60px;
+width:400px;
+font-size:25px;
+margin-top:5px;
+border-radius:30px;
+outline:none;
+font-family:consolas;
+background: rgba(00, 00, 00, 0.2);
+}
+#catch:hover
+{
+background-color:lightgreen;
+color:blue;
+}
+
+#submit
+{
+height:60px;
+width:250px;
+display:block;
+cursor:pointer;
+font-size:25px;
+margin:25px auto;
+border-radius:30px;
+outline:none;
+font-family:consolas;
+font-weight:bolder;
+}
+#submit:hover
+{
+background-color:lightgreen;
+color:black;
+}
+
+
+
+
+</style>
+
+</head>
+<body onload="captcha()">
+<font color="white"><h3 align="center">  <b><i>Developed</i></b> &amp; <b><i>Designed </i></b> by <b><i>KAMLESH KUMAR BIND</i></b> </h3></font>
+<div id="outer"><form>
+<div class="image"></div>
+<div class="container"><form>
+<input type="text" id="name" placeholder="Enter Name"/>
+<input type="email" id="email" placeholder="Enter Email"/>
+<input type="text" id="capt" readonly />
+<input type="button" id="reload" value="RELOAD"  onclick="captcha()"> 
+<input type="text" id="catch" placeholder="Enter above captcha" /> 
+<input type="button" id="submit" value="REGISTER" onclick="match()"></form>
+</div></form>
+</div>
+
+ 
+
+
+</body>
+</html>
